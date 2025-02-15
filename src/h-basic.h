@@ -48,7 +48,9 @@
  * Define UNIX if our OS is UNIXy
  */
 #if !defined(WINDOWS) && !defined(GAMEBOY) && !defined(NDS)
-# define UNIX
+# if !defined(__wii__) && !defined(__gamecube__)
+#  define UNIX
+# endif
 
 # ifndef HAVE_DIRENT_H
 #  define HAVE_DIRENT_H

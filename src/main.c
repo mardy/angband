@@ -41,6 +41,10 @@
 #include <langinfo.h>
 #endif
 
+#if defined(__wii__) || defined(__gamecube__)
+#include <unistd.h>
+#endif
+
 /**
  * Some machines have a "main()" function in their "main-xxx.c" file,
  * all the others use this file for their "main()" function.
@@ -323,6 +327,10 @@ int main(int argc, char *argv[])
 
 	const char *mstr = NULL;
 	bool args = true;
+
+#if defined(__wii__) || defined(__gamecube__)
+	chdir("/apps/angband");
+#endif
 
 	/* Save the "program name" XXX XXX XXX */
 	argv0 = argv[0];

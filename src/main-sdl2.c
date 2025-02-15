@@ -105,9 +105,13 @@
 #define GLYPH_FOR_ADVANCE 'W'
 #define DEFAULT_VECTOR_FONT_SIZE 12
 
+#if defined(__wii__) || defined(__gamecube__)
+#define DEFAULT_FONT "7x13x.fon"
+#define DEFAULT_DIALOG_FONT "7x13x.fon"
+#else
 #define DEFAULT_FONT "10x20x.fon"
-
 #define DEFAULT_DIALOG_FONT "8x13x.fon"
+#endif
 
 #define MAX_VECTOR_FONT_SIZE 64
 #define MIN_VECTOR_FONT_SIZE 4
